@@ -19,4 +19,4 @@ const AppDownload = () => {
   )
 }
 
-export default AppDownlad
+export default AppDownload ;
