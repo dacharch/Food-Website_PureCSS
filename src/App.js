@@ -5,7 +5,7 @@ import { Cart } from "./components/pages/Cart/Cart";
 import PlaceOrder from "./components/pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import { useState } from "react";
-import { LoginPopup } from "./components/LoginPopup/LoginPopup";
+import LoginPopup from "./components/LoginPopup/LoginPopup";
 
 function App() {
   
