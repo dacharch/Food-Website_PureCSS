@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
 
 import  { ContextState } from "../../../context/StoreContext"
+import "./Cart.css"
+import { useNavigate } from 'react-router-dom';
 
 
 export const Cart = () => {
-  const{cartItems,removeFromCart ,food_list } = ContextState() ;
-
+  const{cartItems,removeFromCart ,food_list,getTotalCartAmount} = ContextState() ;
+  const navigate = useNavigate() ;
   return (
+    
     <div className="cart">
       <div className="cart-items">
         <div className="cart-items-title">
@@ -17,9 +20,10 @@ export const Cart = () => {
           <p>Total</p>
           <p>Remove</p>
         </div>
-        <br />
-        <hr />
-        {food_list.map((item, index) => {
+        <br/>
+        <hr/>
+
+        {/* {food_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
               <div>
@@ -37,26 +41,29 @@ export const Cart = () => {
               </div>
             );
           }
-        })}
+        })} */}
       </div>
+
+
       <div className="cart-bottom">
         <div className="cart-total">
           <h2>Cart Totals</h2>
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>{0}</p>
+              <p>${getTotalCartAmount()}</p>
             </div>
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>{2}</p>
+              <p>${getTotalCartAmount()===0?0:
+              2}</p>
             </div>
             <div className="cart-total-details">
               <b>Total</b>
-              <b>{0}</b>
+              <b>${getTotalCartAmount()}</b>
             </div>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
         </div>
         <div className='cart-promocode'>
            <div>
