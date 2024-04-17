@@ -1,13 +1,16 @@
 import React, { useContext } from 'react'
-import "./FoodDisplay.css"
-import { StoreContext } from '../../context/StoreContext'
+
 import FoodItem from '../FoodItem/FoodItem';
+import "./FoodDisplay.css"
+import { ContextState } from '../../context/StoreContext';
+
+
 
 
 
 const FoodDisplay = ({category}) => {
  
-  const {food_list} = useContext(StoreContext) ;
+  const {food_list} = ContextState() ;
 
   return (
     <div className='food-display' id="food-display">

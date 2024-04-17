@@ -7,11 +7,9 @@ import StoreContextProvider from './context/StoreContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <StoreContextProvider>
     <BrowserRouter>
-      <StoreContextProvider>
-        <App />
-      </StoreContextProvider>
+      <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </StoreContextProvider>
 );
